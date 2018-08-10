@@ -1,0 +1,15 @@
+1. Nginx Tomcat
+
+2. 安全
+
+3. Spring Struts2 MyBatis
+
+4. Memcached Redis
+
+5. SOA(Dubbo)
+
+6. JMS
+
+7. 事务
+
+8. MySQL(设计) MongoDB

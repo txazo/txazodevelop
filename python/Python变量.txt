@@ -1,0 +1,33 @@
+Python变量
+
+1. 数据类型
+1) 整数
+2) 长整数
+3) 浮点数
+4) 复数
+5) 字符串
+
+2. 字符串
+1) 单引号字符串
+'This is a one-quote string'
+2) 双引号字符串
+"This is a two-quote string"
+3) 三引号字符串，可换行，可使用单引号和双引号
+'''This is a three-quote string'''
+'''quote'"quote'''
+3) 转义符
+'quote\'quote'
+"quote\"quote"
+4) 行连接符
+"This is the first line.\
+Thie is the second line."
+5) 自然字符串，不处理转义符，适于处理正则表达式
+print(r'Hello\nWorld', R'Hello\nWorld')
+6) Unicode字符串
+print(u'中文', U'中文')
+7) 字符串不可变
+8) 单引号和双引号完全相同
+
+3. 变量标识符，同Java
+
+4. 变量不需要声明和定义数据类型

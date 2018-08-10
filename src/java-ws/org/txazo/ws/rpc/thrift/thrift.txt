@@ -1,0 +1,87 @@
+Thrift
+
+1. RPC软件框架，用来进行可扩展且跨语言的服务的开发
+
+2. Maven Thrift
+<dependency>
+  <groupId>org.apache.thrift</groupId>
+  <artifactId>libthrift</artifactId>
+  <version>0.9.1</version>
+</dependency>
+
+3. Thrift数据类型
+1) 基本数据类型
+bool	布尔值，对应Java的boolean
+byte	8位有符号整数，对应Java的byte
+i16		16位有符号整数，对应Java的short
+i32		32位有符号整数，对应Java的int
+i64		64位有符号整数，对应Java的long
+double	64位浮点数，对应Java的double
+string	utf-8编码的字符串，对应Java的String
+2) 结构体类型
+struct	对应Java的JavaBean
+struct User {
+    1:i32 id,
+	2:string username
+}
+3) 容器类型
+list<type>			对应Java的ArrayList
+set<type>			对应Java的HashSet
+map<type, type>		对应Java的HashMap
+4) 异常类型
+exception	对应Java的Exception
+5) 服务类型
+service		对应Java的Service
+
+4. Thrift服务端
+1) 实现服务接口
+2) 创建TProcessor
+3) 创建TServerTransport
+4) 创建TProtocol
+5) 创建TServer
+6) 调用TServer的serve()方法
+
+5. Thrift客户端
+1) 创建TTransport
+2) 创建TProtocol
+3) 创建TServiceClient
+4) 调用TServiceClient的相应方法
+
+6. Java Thrift Server
+1) TSimpleServer，单线程，阻塞I/O，用于测试
+2) TNonblockingServer，非阻塞I/O
+3) THsHaServer，半同步半异步，一个线程处理网络I/O，一个线程处理消息
+4) TThreadedSelectorServer，允许多个线程来处理网络，维护两个线程池，一个处理网络I/O，一个处理请求
+5) TThreadPoolServer，可配置线程池的线程数，适于高并发
+
+7. Thrift数据传输协议
+1) TBinaryProtocol			二进制格式
+2) TCompactProtocol 		压缩格式
+3) TJSONProtocol 			JSON格式
+4) TSimpleJSONProtocol 		提供JSON只写协议
+
+8. Thrift文件
+namespace java org.txazo.ws.rpc.thrift.core
+
+service ThriftService {
+    bool login(1:i32 id, 2:string password)
+}
+
+thrift-0.9.1.exe -r --gen java ./ThriftService.thrift
+
+public class ThriftServiceImpl implements ThriftService.Iface {
+
+	private static Map<Integer, String> userMap = new HashedMap<Integer, String>();
+
+	static {
+		userMap.put(1001, "root");
+		userMap.put(1002, "admin");
+	}
+
+	@Override
+	public boolean login(int id, String password) throws TException {
+		String p = userMap.get(id);
+		return p == null ? false : p.equals(password);
+	}
+
+}

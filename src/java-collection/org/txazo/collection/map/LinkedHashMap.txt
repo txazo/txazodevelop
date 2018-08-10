@@ -1,0 +1,4 @@
+LinkedHashMap
+
+1. 继承自HashMap
+2. 

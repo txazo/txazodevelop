@@ -1,0 +1,29 @@
+<project name="target" basedir="." default="target">
+
+	<property name="target1.test" value="" />
+
+    <!--
+		name: target名称
+		depends: target依赖
+		if: 属性存在时执行target
+		unless: 属性不存在时执行target
+		description: target描述
+	-->
+	<target name="target1" if="target1.test" description="target1">
+		<echo message="exec target1" />
+	</target>
+
+	<target name="target2" depends="target1" unless="target2.test"
+		description="target2">
+		<echo message="exec target2" />
+	</target>
+
+	<target name="target3" depends="target2" description="target3">
+		<echo message="exec target3" />
+	</target>
+
+	<target name="target" depends="target3" description="target">
+		<echo message="exec target" />
+	</target>
+
+</project>

@@ -1,0 +1,17 @@
+Map
+
+1. Map
+
+2. Map.Entry
+
+3. AbstractMap implements Map
+
+4. LinkedHashMap extends HashMap implements Map
+   HashMap extends AbstractMap implements Map
+
+5. TreeMap extends AbstractMap implements NavigableMap
+   NavigableMap extends SortedMap
+   SortedMap extends Map
+
+6. Properties extends Hashtable
+   Hashtable extends Dictionary implements Map

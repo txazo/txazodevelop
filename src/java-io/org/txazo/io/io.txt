@@ -1,0 +1,53 @@
+IO
+
+1. IO: 通过数据流、序列化和文件系统提供系统输入和输出
+
+2. 分类:
+   1) 输入流 输出流
+   2) 字节流 字符流
+   3) 节点流 过滤流
+
+3. IO架构
+   1) InputStream
+       ByteArrayInputStream
+	   FileInputStream
+	   FilterInputStream
+	       BufferedInputStream
+		   DataInputStream
+	   ObjectInputStream
+   2) OutputStream
+       ByteArrayOutputStream
+	   FileOutputStream
+	   FilterOutputStream
+	       BufferedOutputStream
+		   DataOutputStream
+		   PrintStream
+	   ObjectOutputStream
+   3) Reader
+       BufferedReader
+	   CharArrayReader
+	   InputStreamReader
+	       FileReader
+	   StringReader
+   4) Writer
+       BufferedWriter
+	   CharArrayWriter
+	   OutputStreamWriter
+	       FileWriter
+	   PrintWriter
+	   StringWriter
+
+4. IO主要分磁盘IO和网络IO
+   1) 磁盘IO
+      FileInputStream FileOutputStream
+	  FileReader FileWriter
+   2) 网络IO
+      SocketInputStream SocketOutputStream
+
+5. InputStream OutputStream Reader Writer都实现了java.io.Closeable接口
+   从JDK7开始，java.io.Closeable接口继承自java.lang.AutoCloseable接口，实现该接口的类的对象可以使用JDK 7提供的自动尝试关闭资源语法来关闭资源，从而避免显示调用close()方法来关闭资源
+   try (InputStream is = new FileInputStream("D:/test/in.txt")) {
+       is.read();
+   } catch (IOException e) {
+       e.printStackTrace();
+   }

@@ -1,0 +1,8 @@
+TreeMap
+
+1. 线程不安全，继承自AbstractMap
+2. 有序的key-value集合，基于对key的排序
+3. 实现: 数组 + 链表，数组大小默认为16，一定为2的指数
+   原理: 红黑树
+4. 性能: get()、put()、remove()、containsKey()的时间复杂度为O(log(n))
+5. 遍历: Iterator

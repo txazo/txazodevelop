@@ -1,0 +1,135 @@
+1. 循环
+    1)循环中避免反复求值
+    2)try-catch放到循环外
+    3)避免在循环中调用synchronized同步方法
+    4)避免在循环中实例化变量，建议在循环外定义，反复使用
+
+2. Vector ArrayList
+    1)指定初始大小
+	2)添加删除元素避免元素移位
+	3)ArrayList效率高，Vector线程安全
+
+3. HashTable HashMap
+    1)指定初始大小
+	2)HashMap遍历
+	    Map<String, String> map = new HashMap<String, String>();
+	    for (Entry<String, String> entry : map.entrySet()) {
+		    String key = entry.getKey();
+		    String value = entry.getValue();
+	    }
+	3)HashMap效率高，HashTable线程安全
+
+4. StringBuilder StringBuffer
+    1)指定初始大小
+	3)StringBuilder效率高，StringBuffer线程安全
+
+5. try-catch-finally
+    1)finally中关闭资源
+        数据库连接
+	    I/O流操作
+	2)慎用异常，异常对性能不利
+	3)异常用来处理错误，不用来控制流程
+
+6. 数组
+    1)数组复制用System.arraycopy()代替循环复制
+	2)不要将数组声明为public static final
+
+7. final
+    1)final修饰不变或不可修改的变量
+	2)final修饰不能被派生的类，该类所有方法都是final的
+	3)final修饰不能被重写的方法
+	4)final修饰方法变为内联，可提升性能
+
+8. 乘除法
+   移位乘除法
+
+9. 字符串
+    1)一个字符，单引号替代双引号
+    2)连接字符串：StringBuilder和StringBuffer
+    3)StringBuilder：线程不安全，效率高
+    4)StringBuffer：线程安全
+    5)单个字符，charAt()代替startsWith()
+	6)单个字符参与字符串相加，''代替“”
+	7)常量字符串或常量字符串相加，String代替StringBuffer
+
+10. instanceof
+    1)尽量避免使用instanceof
+	2)尽量与接口进行instanceof操作，而不是与类进行instanceof操作
+
+11. 四则运算
+    1)移位操作代替乘除
+
+12. boolean
+    1)避免将boolean与true(false)比较，直接返回boolean即可
+
+13. 条件操作符(?:)
+    1)简单判断可以替代if-else
+        if (condition) {
+            return a;
+        } else {
+            return b;
+        }
+		改为
+        return condition ? a : b;
+    2)简单条件赋值可以替代if-else
+        if (condition) {
+            a = b;
+        } else {
+            a = c;
+        }
+		改为
+        a =  condition ? b : c;
+
+14. 变量
+    局部变量、方法形参：访问快，适合频繁访问
+    实例变量、静态变量：访问慢，不适合频繁访问
+	方法调用频繁，避免创建局部变量，使用实例变量或静态变量代替
+
+15. 取反操作符
+    尽量避免使用，降低程序可读性
+
+16. instanceof
+    尽量与接口进行instanceof操作，而不是与类进行instanceof操作
+
+17. 变量初始化
+    1)默认初始化
+	    对象：null
+		short int long：0
+		float double：0.0
+		boolean：false
+	2)避免调用方法初始化值，类有可能尚未初始化
+	    private int state = this.getState()
+
+18. 同步
+    1)尽量使用方法同步代替代码块同步
+
+19. 内存回收
+    1)确保对象引用-----------------------------------
+
+20. 对象
+    1)在需要时才创建
+	2)clone()代替new创建类的实例
+
+21. get/set方法
+    1)内部调用，直接调用属性
+	2)外部调用。调用get/set方法
+
+22. 避免使用内在的get/set方法
+    应该直接调用，比如直接复制
+
+23. 奇偶判断
+    1)奇数判断：
+	    i % 2 != 0
+		(i & 1) != 0
+	2)偶数判断
+		i % 2 == 0
+		(i & 1) == 0
+
+24. 浮点数
+    1)浮点数精确计算使用BigDecimal
+	    new BigDecimal("1.0")
+25. 整数
+    1)int相乘溢出
+	    long number = 24 * 60 * 60 * 1000 * 1000
+		改为
+		long number = (long) 24 * 60 * 60 * 1000 * 1000

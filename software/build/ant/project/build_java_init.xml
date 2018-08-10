@@ -1,0 +1,24 @@
+<project name="java" basedir="." default="init">
+
+	<property name="build" value="build" />
+	<property name="build-lib" value="build-lib" />
+	<property name="src" value="src" />
+	<property name="java" value="${src}/java" />
+	<property name="resource" value="${src}/resource" />
+	<property name="test" value="${src}/test" />
+
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${build-lib}" />
+		<delete dir="${src}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build-lib}" />
+		<mkdir dir="${java}" />
+		<mkdir dir="${resource}" />
+		<mkdir dir="${test}" />
+	</target>
+
+</project>

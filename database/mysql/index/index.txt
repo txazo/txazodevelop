@@ -1,0 +1,34 @@
+索引数据类型选择
+1) 数据类型越小越好
+1) 时间类型使用date或datetime, 而不是字符串
+   优先使用整形, 而不是字符串
+2) 避免使用NULL
+3) char varchar
+4) int
+tinyint		smallint	int		bigint
+5) like
+like 'field%' 可以用到索引
+like '%field%' 用不到索引
+
+
+联合索引
+index(a, b, c)
+最左前缀匹配	where a = ?
+最左前缀匹配	where a = ? and b = ?
+全列匹配		where a = ? and b = ? and c = ?
+where a in (?)
+where a like '?%'
+范围查询		
+
+MySQL数据类型
+date
+datetime
+
+tinyint		1字节		-2^7  ~ 2^7 - 1  (-128 ~ 127)
+smallint	2字节		-2^15 ~ 2^15 - 1 (-32768 ~ 32767)
+int			4字节		-2^31 ~ 2^31 - 1 (-2147483648 ~ 2147483647)
+bigint		8字节		-2^63 ~ 2^63 - 1 (-9223372036854775808 ~ 9223372036854775807)
+int(M), M代表最大显示宽度
+
+
+BTree索引

@@ -1,0 +1,16 @@
+Iterator
+
+1. JDK1.2提供的接口
+   hasNext()
+   next()
+   remove()
+
+2. 支持fail-fast机制，可删除当前遍历的元素
+
+3. Iterator遍历
+   Collection.iterator()
+   Map.entrySet().iterator()
+   Map.keySet().iterator()
+   Map.values().iterator()
+
+4. Map遍历通过调用Collection遍历来实现

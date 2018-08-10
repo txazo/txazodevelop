@@ -1,0 +1,19 @@
+<project name="property" basedir="." default="property">
+
+	<!--
+	    file: 引入properties文件
+	    name: property名称
+	    value: property值
+	-->
+	<property file="build.properties" />
+
+	<property name="lib.path" value="${basedir}/lib" />
+
+	<target name="property" description="property">
+		<echo message="Property basedir : ${basedir}" />
+		<echo message="Property lib.path : ${lib.path}" />
+		<echo message="Property build.path : ${build.path}" />
+		<echo message="Property build.classes : ${build.classes}" />
+	</target>
+
+</project>

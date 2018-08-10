@@ -1,0 +1,53 @@
+SQL优化
+1. show status
+   show status like 'Com_%'
+   
+   show status like 'Com_select'
+   show status like 'Com_insert'
+   show status like 'Com_update'
+   show status like 'Com_delete'
+   
+   show status like 'Com_commit'
+   show status like 'Com_rollback'
+   
+   show status like 'Con_%'			试图连接MySQL服务器的次数
+   show status like 'Up_%'			服务器工作时间
+   show status like 'Slow_%'		慢查询的次数
+   
+ 2. 慢查询(slow query)
+ 
+ 3. show processlist
+    show processlist
+	show full processlist
+ 
+ 4. Explain
+ 
+ 6. Profile
+    show variables like 'profiling%'
+	set profiling = 1
+	show profiles
+	set profiling = 0
+ 
+ 5. show engine innidb status
+ 
+ MyISAM
+ 1. 表共享读锁：
+ 2. 表独占写锁：
+ 
+ 1. 选择合适的数据类型，尽量定长
+    tinyint smallint int bigint varchar date datetime
+	tinyint		1字节		tinyint(4)		1-4
+	smallint	2字节		smallint(6)		5-6
+	int			4字节		int(11)			7-11
+	bigint		8字节		bigint(20)		12-20
+2. 为避免联合查询，有时可适当的数据冗余
+3. 为保证查询性能，最好每个表都建有auto_increment字段
+4. 最好给每个字段都设定default值
+5. 优化频繁执行的SQL语句
+6. 优化执行时间比较长的慢查询SQL语句
+7. 尽量使用短索引
+8. 用left join来代替子查询，子查询导致SQL无法使用索引
+7. 避免使用MySQL自带函数，利用不上索引，结果不被缓存
+
+8. 避免全表扫描，考虑在where和order by的列上建立索引
+9. 尽量避免NULL值，使用0，空串，或特殊的值代替NULL

@@ -1,0 +1,11 @@
+Base64加密解密：
+
+
+MD5加密-不可逆加密：
+1. Client-MD5加密
+String text = "prefix" + code + "suffix";
+String encrypt = DigestUtils.md5Hex(text);
+Post to Server: code encrypt
+2. Server-MD5校验
+String text = "prefix" + code + "suffix";
+encrypt.equals(DigestUtils.md5Hex(text));

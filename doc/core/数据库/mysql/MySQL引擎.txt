@@ -1,0 +1,6 @@
+MyISAM和InnoDB
+
+1. MyISAM不支持事务，InnoDB支持
+2. MyISAM不支持外键，InnoDB支持
+3. MyISAM只支持表锁，InnoDB支持行锁
+4. MyISAM的读性能强

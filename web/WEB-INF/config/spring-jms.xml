@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!-- ActiveMQ -->
+	<bean id="activeMQJmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL" value="${activemq.brokerURL}" />
+			</bean>
+		</property>
+		<property name="maxConnections" value="100" />
+	</bean>
+
+	<!-- Queue -->
+	<bean id="activeMQQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg index="0" value="${activemq.queue}" />
+	</bean>
+
+	<!-- Spring JMS Template -->
+	<bean id="activemqJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="activeMQJmsFactory" />
+		<property name="defaultDestination" ref="activeMQQueue" />
+	</bean>
+
+	<!-- Spring ReceiverListener -->
+	<bean id="springActiveMQReceiverListener" class="org.txazo.jms.activemq.spring.SpringActiveMQReceiverListener" />
+
+	<!-- Spring MessageListenerContainer -->
+	<bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="activeMQJmsFactory" />
+		<property name="destination" ref="activeMQQueue" />
+		<property name="messageListener" ref="springActiveMQReceiverListener" />
+	</bean>
+
+</beans>

@@ -1,0 +1,32 @@
+RandomAccess
+
+1. List实现所使用的接口，用来表明其支持快速随机访问
+
+2. 实现了该接口的List有:
+   ArrayList
+   CopyOnWriteArrayList
+   Stack
+   Vector
+
+3. 在对List的遍历算法中，判断其是属于随机访问RandomAccess(ArrayList)还是连续访问(LinkedList)
+   对于随机访问，即实现了RandomAccess接口的List，
+	for (int i = 0, n = list.size(); i < n; i++) {
+		list.get(i);
+	}
+   的运行速度要快于
+	for (Iterator<?> i = list.iterator(); i.hasNext();) {
+		i.next();
+	}
+
+4. 通用的List遍历方法
+	public static void traverse(List<?> list) {
+		if (list instanceof RandomAccess) {
+			for (int i = 0, n = list.size(); i < n; i++) {
+				list.get(i);
+			}
+		} else {
+			for (Iterator<?> i = list.iterator(); i.hasNext();) {
+				i.next();
+			}
+		}
+	}

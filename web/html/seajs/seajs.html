@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>Seajs</title>
+<script src="../../js/seajs/seajs/sea.js"></script>
+<script src="../../js/seajs/seajs-config.js"></script>
+</head>
+<body>
+	<h3>Seajs</h3>
+	<script>
+		seajs.use('require');
+		
+		seajs.use(['exports1', 'exports2'], function(exports1, exports2) {
+			exports1.init();
+			exports2.init();
+		});
+		
+		seajs.use('module', function(module) {
+			module.init();
+		});
+		
+		seajs.use('preload');
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+# 安装git
+yum install git
+apt-get install git
+
+# 配置git
+git config --global user.name "txazo"
+git config --global user.email 784990655@qq.com
+git config --list
+
+# 创建git仓库
+mkdir /git
+cd /git
+git init
+
+# 检出仓库
+git clone /path/to/repository 
+git clone username@host:/path/to/repository
+git clone https://github.com/txazo/test.git
+
+# 添加
+git add <filename>
+git add *
+
+# 提交
+git commit -m "comment"
+
+# 推送改动
+git push origin master
+
+git remote add origin https://github.com/txazo/test.git
+git remote add origin git@github.com:txazo/test.git
+git push -u origin master
+
+# 仓库状态
+git status
+git status -s
+
+
+
+ssh-keygen -t rsa -C "784990655@qq.com"

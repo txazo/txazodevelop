@@ -1,0 +1,58 @@
+ArrayBlockingQueue
+
+1. ArrayBlockingQueue
+   1) 数组实现，Object[] items
+   2) 线程安全，ReentrantLock lock
+   3) 有界
+   4) 阻塞队列，先进先出(FIFO)
+
+2. 源码
+public ArrayBlockingQueue(int capacity, boolean fair) {
+	items = new Object[capacity];
+	lock = new ReentrantLock(fair);
+	notEmpty = lock.newCondition();
+	notFull =  lock.newCondition();
+}
+
+public boolean offer(E e) {
+    checkNotNull(e);
+    final ReentrantLock lock = this.lock;
+    lock.lock();
+    try {
+        if (count == items.length)
+            return false;
+        else {
+            insert(e);
+            return true;
+        }
+    } finally {
+        lock.unlock();
+    }
+}
+
+private void insert(E x) {
+    items[putIndex] = x;
+    putIndex = inc(putIndex);
+    ++count;
+    notEmpty.signal();
+}
+
+public E poll() {
+    final ReentrantLock lock = this.lock;
+    lock.lock();
+    try {
+        return (count == 0) ? null : extract();
+    } finally {
+        lock.unlock();
+    }
+}
+
+private E extract() {
+    final Object[] items = this.items;
+    E x = this.<E>cast(items[takeIndex]);
+    items[takeIndex] = null;
+    takeIndex = inc(takeIndex);
+    --count;
+    notFull.signal();
+    return x;
+}

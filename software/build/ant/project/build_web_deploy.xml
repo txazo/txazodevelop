@@ -1,0 +1,54 @@
+<project name="web" basedir="." default="deploy">
+
+	<property name="project" value="web" />
+	<property name="zip" value="${project}.zip" />
+
+	<property name="build" value="build" />
+	<property name="build-dist" value="${build}/${project}" />
+	<property name="build-classes" value="${build-dist}/WEB-INF/classes" />
+	<property name="build-zip" value="${build}/${zip}" />
+	<property name="build-lib" value="build-lib" />
+
+	<property name="java" value="src/java" />
+	<property name="resource" value="src/resource" />
+	<property name="web" value="web" />
+	<property name="lib" value="${web}/WEB-INF/lib" />
+
+	<path id="classpath">
+		<fileset dir="${build-lib}" includes="*.jar" />
+		<fileset dir="${lib}" includes="*.jar" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build-classes}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${java}" destdir="${build-classes}" classpathref="classpath" target="1.7" encoding="utf-8" includeantruntime="false" />
+	</target>
+
+	<target name="deploy" depends="compile">
+		<copy todir="${build-classes}" overwrite="true">
+			<fileset dir="${resource}">
+				<include name="*.properties" />
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build-dist}" overwrite="true">
+			<fileset dir="${web}">
+				<exclude name="WEB-INF/classes/**" />
+				<!--<exclude name="WEB-INF/lib/**" /> -->
+				<exclude name="WEB-INF/tmp/**" />
+				<exclude name="WEB-INF/work/**" />
+			</fileset>
+		</copy>
+
+		<zip destfile="${build-zip}" basedir="${build-dist}" />
+	</target>
+
+</project>

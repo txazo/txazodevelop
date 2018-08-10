@@ -1,0 +1,16 @@
+ConcurrentHashMap
+
+1. 线程安全的哈希表，通过锁分段来保证线程安全
+
+2. ConcurrentHashMap数据结构
+   Segment<K, V>[] segments
+       volatile HashEntry<K, V>[] table
+	       int hash
+		   K key
+		   volatile V value
+		   volatile HashEntry<K, V> next
+   1) ConcurrentHashMap包含Segment数组，Segment包含HashEntry数组，HashEntry是一个单向链表
+   2) Segment就是一个链式哈希表
+   3) Segment继承自ReentrantLock，是一个可重入的互斥锁
+   4) 对ConcurrentHashMap的写操作，写操作前获取Segment的互斥锁，写操作完毕之后释放Segment的互斥锁
+   5) 对ConcurrentHashMap的读操作，通过volatile实现

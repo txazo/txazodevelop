@@ -1,0 +1,20 @@
+<project name="echo" basedir="." default="echo">
+
+	<target name="echo" description="echo">
+
+        <!-- 输出信息 -->
+		<echo>warning</echo>
+		<echo message="error" level="error" />
+		<echo message="warning" level="warning" />
+		<echo message="warning" />
+		<echo message="info" level="info" />
+		<echo message="verbose" level="verbose" />
+		<echo message="debug" level="debug" />
+
+        <!-- 输出信息到文件 -->
+		<echo file="D:/echo.sh" append="false">#!/bin/sh
+echo "ant echo"</echo>
+
+	</target>
+
+</project>

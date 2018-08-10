@@ -1,0 +1,215 @@
+**********<< 浏览器 >>**********
+1. http://doc.txazo.com
+2. 域名解析(客户端 - 本地DNS服务器 - DNS根服务器 - 查询域DNS服务器 - 下级DNS服务器)(TTL) (OK)
+3. TCP(三次握手(SYN SYN-ACK ACK) 半连接 SYN攻击 四次挥手(FIN ACK FIN ACk)) (OK)
+4. HTTP(2成功200 3重定向302 304 4请求错误403 404 5服务器错误500 503) (OK)
+5. HTTPS(SSL) (OK)
+6. HTML解析 (OK)
+ 1) 二进制字节码 - HTML解析 - DOM树
+ 2) 从上到下，边渲染，边下载(CSS JS)
+7. Last-Modified ETag Expires Cache-Control (OK)
+8. CDN缓存 (OK)
+9. CSS Image JavaScript优化 (OK)
+
+**********<< JavaScript >>**********
+1. jQuery(DOM选择器 事件 动态效果 AJAX 多浏览器兼容 第三方插件) (OK)
+2. LABjs(异步并行加载 同步等待执行 控制加载顺序) (OK)
+3. SeaJS(模块化开发加载 异步加载) (OK)
+
+**********<< 服务器 >>**********
+1. Nginx(upstream/proxy_pass rewrite) (OK)
+2. Resin (OK)
+3. Tomcat (OK)
+
+**********<< Java >>**********
+1. 字符串(String(final char[]) StringBuffer(char[]) StringBuilder) (OK)
+2. 异常(Exception RuntimeException Error return-finally) (OK)
+3. final finally finalize (OK)
+4. override(父子) overload(同名) (OK)
+5. abstract class interface (OK)
+6. 内部类 静态内部类 匿名内部类(无类名) (OK)
+7. hashcode equals == (OK)
+8. volatile(读最新 不保证原子性) (OK)
+9. 正则表达式 (OK)
+
+**********<< Java 高级特性 >>**********
+1. 自动装箱拆箱(语法糖 null) (OK)
+2. 枚举 (序列化 语法糖) (OK)
+3. 反射 (OK)
+4. 动态代理 (Proxy.newProxyInstance InvocationHandler Proxy.method() - InvocationHandler.invoke(proxy, method, args) - method.invoke(target, args)) (OK)
+5. 泛型(语法糖) (OK)
+6. 枚举(语法糖 序列化) (OK)
+7. 注解 (OK)
+8. 增强for循环(语法糖 Iterator) (OK)
+9. 可变长参数 (OK)
+
+**********<< Java IO >>**********
+1. IO(装饰器模式) (OK)
+2. 字节流 字符流 (OK)
+3. NIO (OK)
+4. 序列化(Serializable Externalizable) (OK)
+
+**********<< Java Collection >>**********
+1. Collection Collections (OK)
+2. List(ArrayList LinkedList Vector Stack CopyOnWriteArrayList Collections.synchronizedList()) (OK)
+3. Set(HashSet TreeSet CopyOnWriteArraySet Collections.synchronizedSet()) (OK)
+4. Map(HashMap Hashtable TreeMap(红黑树) Collections.synchronizedMap ConcurrentHashMap) (OK)
+5. Comparable Comparator (Ok)
+
+**********<< Java Thread >>**********
+1. sleep wait notify (OK)
+2. 同步(多线程共享) 异步(耗时调用) (OK)
+3. 线程同步(synchronized wait-notify-notifyAll Lock) (OK)
+4. ThreadLocal(Thread(ThreadLocal.ThreadLocalMap)) (OK)
+
+**********<< Java Network >>**********
+1. Socket ServerSocket (OK)
+
+**********<< Java Web >>**********
+1. Servlet(init service(doGet doPost) destory) (OK)
+2. forward(转发) redirect(302)(重定向) (OK)
+3. 静态include 动态include (OK)
+4. JSP内置对象(application session request response page out config exception pageContext) (OK)
+5. JSP指令(page taglib include) (OK)
+6. JSP编码(pageEncoding contentType) (OK)
+
+**********<< Java 设计模式 >>**********
+1. 单例模式 (OK)
+2. 代理模式 (OK)
+
+**********<< JVM >>**********
+1. GC (OK)
+2. 内存泄漏 (OK)
+3. 内存溢出 (OK)
+4. 类加载(Bootstrap-Extension-System-自定义 双亲委派机制) (OK)
+5. System.gc() (OK)
+6. JVM结构(程序计数器 Java虚拟机栈 本地方法栈 Java堆 方法区 运行时常量池) (OK)
+7. 类初始化(clinit) 对象实例化(init) (OK)
+8. 语法糖 (AutoBox Enum Foreach Generic If VariableParameter) (OK)
+9. GC对象判定 GC算法 (OK)
+
+**********<< Struts2 >>**********
+1. StrutsPrepareAndExecuteFilter (OK)
+2. 请求 - 线程 - ThreadLocal - ActionContext - Action (OK)
+3. StrutsPrepareAndExecuteFilter - Dispatcher - ActionMapping - ActionProxy - ActionInvocation - Interceptor - Action - Interceptor - Result (OK)
+4. 拦截器(ParametersInterceptor 参数注入) (OK)
+5. 类型转换(OGNL 内置 自定义) (OK)
+6. ValueStack (OK)
+
+**********<< Spring >>**********
+1. Spring容器(bean(singleton prototype request session)) (OK)
+2. IOC(注入方式 反射 同名bean @Autowired @Resource(name="", type="")) (OK)
+3. AOP(反射 动态代理) (OK)
+4. Spring MVC (OK)
+5. Spring事务管理(编程式 声明式(XML 注解) 原子性-一致性-隔离性-持久性 5种隔离级别 脏读-不可重复读-幻象读) (OK)
+6. Spring JDBC (OK)
+
+**********<< MyBatis >>**********
+1. ORM
+2. xml/注解
+3. SessionFactory - Session - CRUD - close
+4. mybatis.xml(别名 SessionFactory/JDBC 映射文件)
+
+**********<< JDBC >>**********
+1. 数据库连接池(C3P0 DBCP) (OK)
+
+**********<< MySQL >>**********
+1. 数据备份(copy mysqldump/source select/load) (OK)
+2. 索引 (OK)
+3. 主从同步 (OK)
+4. 分表分库 (OK)
+5. 引擎(MyISAM InnoDB) (OK)
+6. 慢查询日志 (OK)
+
+**********<< RPC >>**********
+1. Hessian (OK)
+2. Thrift (OK)
+3. Protocol Buffer (OK)
+
+**********<< 缓存 >>**********
+1. Memcached(内存 key/value 分布式) (OK)
+2. Redis(内存/持久化 主从 key/value(string list set zset map)) (OK)
+
+**********<< 搜索 >>**********
+1. Lucene(全文索引(字符串-文件) 评分机制 排序) (OK)
+2. Lucene(索引过程 分词 - 建立索引 - 存储索引) (OK)
+3. Lucene(搜索过程 分词 - 搜索索引 - 结果排序) (OK)
+
+**********<< 消息 >>**********
+1. JMS (OK)
+2. Queue(队列 点对点 一对一) (OK)
+3. Topic(主题 发布/订阅 一对多) (OK)
+
+**********<< 负载均衡 >>**********
+1. 一致性hash(环形hash(0 ~ 2^32 - 1) 虚拟节点) (OK)
+2. DNS负载均衡 (OK)
+3. HTTP重定向负载均衡 (OK)
+4. 反向代理负载均衡(nginx) (OK)
+
+**********<< Linux >>**********
+1. ps (-ef | -aux) (OK)
+
+**********<< Shell >>**********
+1. awk (OK)
+2. grep (OK)
+3. sed (OK)
+
+**********<< 优化 >>**********
+1. 前端优化(HTML静态化 静态资源分离) (OK)
+2. 服务器优化(负载均衡(dns lvs nginx) 集群) (OK)
+2. 应用优化(缓存 代码优化) (OK)
+3. 数据库优化 (OK)
+
+**********<< 工具 >>**********
+1. Ant Maven (OK)
+2. SVN Git (OK)
+3. JUnit (OK)
+4. Eclipse (OK)
+
+**********<< 公司技术架构 >>**********
+1. LVS(LVS-DR(director realserver 同一网卡 mac地址)) + Nginx + Resin (OK)
+2. Spring MVC + Spring JDBC + Redis + Memcached + Hessian (OK)
+3. MySQL(主从同步 分库分表) (OK)
+4. Shell离线分析(报表) (OK)
+5. jQuery + LABjs + SeaJS (OK)
+
+**********<< 点评 >>**********
+1. Spring Struts2 MyBatis
+2. 缓存 通信 消息队列
+3. Git 版本库
+4. 负载均衡 数据库 缓存 分布式存储 服务框架 研发工具 海量数据
+5. HTTP优化
+ 1) Binary + GZip(byte[] - Encrypt/Decrypt - GZip - HASH(MD5))
+ 2) 复用TCP长连接(并发请求)
+6. 缓存优化
+ 1) Memcached(主备)
+7. 动态加载
+
+**********<< 公司服务架构 >>**********
+1. 用户 图片 (OK)
+2. 登录 注册 邮件 推荐 搜索 支付 消息 互动 (OK)
+3. PC APP CRM (OK)
+
+**********<< 公司项目 >>**********
+1. 邮件 (OK)
+2. 活动 (OK)
+3. 支付 (OK)
+4. 数据统计 (OK)
+
+**********<< 其他 >>**********
+1. 为什么辞职(职业生涯 工作挑战性 地区) (OK)
+2. 加班(可以加班 尽量避免加班(影响效率)) (OK)
+3. 薪资(工作经验-学历水平-技能水平-范围-符合 反问对方) (OK)
+4. 问题(新人培训 技术讲座 职级晋升) (OK)
+
+**********<< HR >>**********
+1. 自我介绍(Java 工作激情)
+3. 职业规划 行业广度 亲人
+4. 对方 行情 自身情况(胜任) 期望值(合理)
+5. 试用期 新人培训
+6. 长期目标()
+7. 优缺点(温和 工作认真负责富有激情)
+
+1. 离开(职业规划 发展空间 地区)
+2. 选择我们公司(适合我 胜任工作 提升自己)
+   短期目标()

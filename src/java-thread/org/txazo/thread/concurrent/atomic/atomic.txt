@@ -1,0 +1,13 @@
+Atomic
+
+1. 对相应的数据进行原子操作
+
+2. Java中，++i和i++不是线程安全的
+
+3. 基本类型: AtomicInteger AtomicLong AtomicBoolean
+
+4. 数组类型: AtomicIntegerArray AtomicLongArray AtomicReferenceArray
+
+5. 引用类型: AtomicReference AtomicStampedReference AtomicMarkableReference
+
+6. 对象属性修改类型: AtomicIntegerFieldUpdater AtomicLongFieldUpdater AtomicReferenceFieldUpdater

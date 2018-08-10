@@ -1,0 +1,48 @@
+1. 工作中常用的设计模式，用在什么场合
+
+2. 做过什么项目
+
+3. 排序算法
+冒泡排序
+
+4. JVM
+JVM类加载
+方法继承 重写原理
+
+5. ArrayList Vector
+
+6. HashMap
+
+7. 高并发解决方案
+HTML静态化 负载均衡 样式分离 服务器集群 数据集分库分表主从 缓存
+
+8. 反射
+原理：
+应用：Spring IOC
+
+9 数据库
+SQL调优
+索引优化
+
+10. Spring
+IOC AOP
+事务
+
+11. String StringBuffer StringBuilder(char[])
+
+12. 自动拆箱装箱
+int Integer
+
+13. 数据库连接池
+
+14. 源码
+
+15. RESTful
+软件架构
+
+16. 多线程
+ThreadLocal
+
+17. 枚举
+
+18. 注解

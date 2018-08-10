@@ -1,0 +1,65 @@
+Struts2原理
+
+Spring
+	优点
+
+MyBatis原理
+	Hibernate Spring JDBC
+
+事务
+
+安全
+
+IOC
+AOP
+SOA
+
+JDK工具
+
+性能 效率
+
+数据库连接池
+
+项目整体结构
+
+Shell
+	awk sed grep
+
+MySQL优化
+1) 慢查询 - 查询语句优化
+2) 索引
+3) 分库分表
+4) 主从
+
+JVM
+
+新入职员工的培训
+公司晋升机制
+
+
+
+序列化
+
+IO 字节流 字符流
+
+NIO
+
+字符串(String StringBuffer StringBuilder)
+
+自动装箱拆箱
+
+异常
+
+Servlet(init service(doGet doPost) destory)
+
+Collection(List Set map) Collections
+
+final finally finalize
+
+sleep wait notify
+
+多态 override(父子) overload(同名)
+
+Exception RuntimeException Error
+
+同步(多线程共享) 异步(耗时调用)

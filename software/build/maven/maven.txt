@@ -1,0 +1,29 @@
+Maven
+
+1. 下载Maven
+   apache-maven-3.2.1-bin.zip
+   解压到E:/Maven/apache-maven-3.2.1
+   设置环境变量
+       M2_HOME	E:\Maven\apache-maven-3.2.1
+	   M2		%M2_HOME%\bin
+	   Path		%Path%;%M2%
+   测试安装 mvn -v
+            mvn -version
+
+2. Eclipse Maven插件
+   Help -> Eclipse Marketplace -> Search -> Maven Integration for Eclipse
+
+3. Eclipse中配置Maven
+   设置Maven安装路径
+   Preferences -> Maven -> Installations
+		Select the installation used to launch Maven
+			E:\Maven\apache-maven-3.2.1
+		Global settings from installation directory:
+			E:\Maven\apache-maven-3.2.1\conf\settings.xml
+   Preferences -> Maven -> User Settings
+		User Settings: E:\Maven\apache-maven-3.2.1\conf\settings.xml
+		Local Repository:E:\Maven\repository
+
+4. Maven配置文件
+   E:\Maven\apache-maven-3.2.1\conf\settings.xml
+		<localRepository>E:\Maven\repository</localRepository>

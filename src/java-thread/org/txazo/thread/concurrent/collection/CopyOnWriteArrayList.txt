@@ -1,0 +1,20 @@
+CopyOnWriteArrayList
+
+1. 相当于线程安全的ArrayList
+
+2. 读写分离
+   1) 读操作，效率很高，不加锁，直接读数组
+      get() iterator()
+   2) 写操作，效率很低，先加锁，复制数组到新数组，写新数组，数组引用指向新数组
+      add() set() remove()
+   3) 读写之间的同步处理: 数组引用指向新数组
+
+3. 适合应用场景
+   1) List大小较小
+   2) 读操作远多于写操作，比如缓存
+
+4. 迭代器: 支持hasNext()和next()操作，不支持remove()操作，不支持fail-fast机制
+
+5. 写操作原理
+   volatile transient Object[] array;
+   transient final ReentrantLock lock = new ReentrantLock();

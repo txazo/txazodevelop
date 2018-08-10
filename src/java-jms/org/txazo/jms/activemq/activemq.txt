@@ -1,0 +1,7 @@
+ActiveMQ
+
+1. Windows
+cd %ActiveMQ_HOME%/bin
+activemq start
+
+2. http://localhost:8161/admin/

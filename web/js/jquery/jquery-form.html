@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+	<select id="select">
+		<option value="1" selected="selected">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+	</select>
+<script type="text/javascript">
+$(function() {
+	$("#select").bind("change", function() {
+		var value = $(this).children("option:selected").val();
+		alert(value);
+	});
+});
+</script>
+</body>
+</html>

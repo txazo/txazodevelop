@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>Labjs</title>
+<script src="../../js/labjs/labjs/LAB.min.js"></script>
+</head>
+<body>
+	<h3>Labjs</h3>
+	<script>
+		// init1();
+		// init2();
+		init3();
+		
+		function init1() {
+			$LAB
+			.script('../../js/labjs/script1.js')
+			.script('../../js/labjs/script2.js')
+			.wait(function() {
+				script1.init();
+				script2.init();
+			});
+		}
+		
+		function init2() {
+			$LAB
+			.script(['../../js/labjs/script1.js', '../../js/labjs/script2.js'])
+			.wait(function() {
+				script1.init();
+				script2.init();
+			});
+		}
+		
+		function init3() {
+			$LAB
+			.script('../../js/labjs/script1.js')
+			.wait(function() {
+				script1.init();
+			})
+			.script('../../js/labjs/script2.js').wait()
+			.script('../../js/labjs/script3.js')
+			.wait(function() {
+				script2.init();
+				script3.init();
+			});
+		}
+	</script>
+</body>
+</html>

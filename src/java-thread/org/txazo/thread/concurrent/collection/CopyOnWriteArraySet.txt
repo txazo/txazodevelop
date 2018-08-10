@@ -1,0 +1,5 @@
+CopyOnWriteArraySet
+
+1. 线程安全的HashSet
+
+2. 基于CopyOnWriteArrayList实现，同CopyOnWriteArrayList，但不允许有重复元素

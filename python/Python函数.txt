@@ -1,0 +1,59 @@
+Python函数
+
+1. 函数定义
+def printMax(a, b):
+	if a > b:
+		print(a, 'is max')
+	else:
+		print(b, 'is max')
+printMax(1, 2)
+
+2. 全局变量和局部变量
+def hello(a):
+	global b
+	a = 3
+	b = 4
+	print('change local a to', a)
+	print('change global b to', b)
+a = 1
+b = 2
+print(a, b)
+hello(1)
+print(a, b)
+
+3. 默认参数值，有默认参数值的形参必须放在形参末尾
+def hello(name, times = 1):
+	print(name, 'hello', times, 'times')
+hello('txazo')
+hello('txazo', 3)
+
+4. 关键参数
+def func(a, b = 1, c = 2):
+	print('a =', a, ', b =', b, ',c =', c)
+func(1, 2, 3)
+func(1, c = 4)
+func(a = 5, c = 6)
+
+5. return语句，没有返回值的return语句等价于return None
+def getMax(a, b):
+	if a > b:
+		return a
+	else:
+		return b
+print('The max is', getMax(1, 2))
+
+def noReturnFunction():
+	pass
+print(noReturnFunction())
+
+6. 文档字符串(DocStrings)，函数的第一个逻辑行的字符串
+def printMax(a, b):
+	'''Print the maxinum of two integers'''
+	a = int(a)
+	b = int(b)
+	if a > b:
+		print(a, 'is the maximum')
+	else:
+		print(b, 'is the maximum')
+printMax(1, 2)
+print(printMax.__doc__)

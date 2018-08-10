@@ -1,0 +1,11 @@
+http://www.txazo.com/index
+
+www.txazo.com
+域名解析
+DNS负载均衡
+
+http
+http协议
+
+112.124.6.220
+tcp/ip协议

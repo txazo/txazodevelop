@@ -1,0 +1,27 @@
+Executor
+
+1. Executor架构
+   Executor
+   ExecutorService extends Executor
+   AbstractExecutorService implements ExecutorService
+   ScheduledExecutorService extends ExecutorService
+   ThreadPoolExecutor extends AbstractExecutorService
+   ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService
+   Executors
+
+2. Executor
+   1) execute(Runnable command)
+
+3. ExecutorService
+   1) submit(Callable<T> task)
+   2) submit(Runnable task)
+   3) submit(Runnable task, T result)
+
+4. ScheduledExecutorService
+   1) schedule(Callable<V> callable, long delay, TimeUnit unit)
+   2) schedule(Runnable command, long delay, TimeUnit unit)
+   3) scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit)
+   4) scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)
+
+5. Executors
+   静态工厂类，可返回ExecutorService、ScheduledExecutorService、ThreadFactory、Callable等类的对象

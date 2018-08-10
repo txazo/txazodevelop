@@ -1,0 +1,5 @@
+Session
+
+1. 分布式Session
+   1) 基于Cookie的Session共享
+   2) 基于Redis/Memcached的分布Session存储

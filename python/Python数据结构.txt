@@ -1,0 +1,27 @@
+Python数据结构
+
+1. 数据结构
+1) 列表: list
+2) 元组
+3) 字典
+
+2. 列表
+shopList = ['apple', 'orange', 'banana']
+print(len(shopList), shopList)
+for item in shopList:
+	print(item)
+
+shopList.append('rice')
+print(len(shopList), shopList)
+
+shopList.sort()
+print(len(shopList), shopList)
+
+del shopList[0]
+print(len(shopList), shopList)
+
+print(shopList[0])
+
+3. 元组，不可变
+array = {'apple', 'orange', 'banana'}
+print(len(array), array)

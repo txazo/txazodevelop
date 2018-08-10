@@ -1,0 +1,38 @@
+<project name="java" basedir="." default="jar">
+
+	<property name="build" value="build" />
+	<property name="build-classes" value="${build}/classes" />
+	<property name="build-lib" value="build-lib" />
+	<property name="src" value="src" />
+	<property name="java" value="${src}/java" />
+	<property name="resource" value="${src}/resource" />
+
+	<property name="project" value="java" />
+	<property name="jar" value="${build}/${project}.jar" />
+
+	<path id="classpath">
+		<fileset dir="${build-lib}" includes="*.jar" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build-classes}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${java}" destdir="${build-classes}" classpathref="classpath" target="1.7" encoding="utf-8" includeantruntime="false" />
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${jar}">
+			<fileset dir="${build-classes}">
+				<include name="org/txazo/core/**" />
+				<exclude name="org/txazo/test/**" />
+			</fileset>
+		</jar>
+	</target>
+
+</project>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>jQuery Event</title>
+<script src="../../js/jquery/jquery/jquery-1.11.1.min.js"></script>
+<style type="text/css">
+#event ul {
+	list-style: none;
+	width: 500px;
+}
+
+#event ul li {
+	float: left;
+	margin-top: 10px;
+}
+
+#event ul li .left {
+	float: left;
+	width: 100px;
+}
+
+#event ul li div {
+	float: left;
+	width: 400px;
+}
+</style>
+</head>
+<body>
+	<h3>jQuery Event</h3>
+	<div id="event">
+		<ul>
+			<li><span class="left">focus blur</span>
+				<div>
+					<input type="text" id="focusblur" />
+				</div></li>
+			<li><span class="left">change</span>
+				<div>
+					<input type="text" id="change" />&nbsp;&nbsp;<span id="changeMsg"></span>
+				</div></li>
+			<li><span class="left">click</span>
+				<div>
+					<input type="button" value="click" id="click" />&nbsp;&nbsp;<span id="clickMsg"></span>
+				</div></li>
+		</ul>
+	</div>
+	<script>
+		$(function() {
+			var clickTimes = 0;
+
+			$('#focusblur').bind('focus', function() {
+				$(this).css('border', '1px solid red');
+			}).bind('blur', function() {
+				$(this).css('border', '1px solid #c9c9c9');
+			});
+
+			$('#change').bind('change', function() {
+				$('#changeMsg').html($(this).val());
+			});
+
+			$('#click').bind('click', function() {
+				clickTimes = clickTimes + 1;
+				$('#clickMsg').html(clickTimes);
+			});
+		});
+	</script>
+</body>
+</html>

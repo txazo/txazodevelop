@@ -1,0 +1,7 @@
+1. pageEncoding和contentType
+   pageEncoding: jsp文件本身的编码
+   contentType: 服务器发送给客户端的内容编码
+   jsp编译过程:
+   1) jsp编译成java(utf-8)，pageEncoding
+   2) java(utf-8)编译成class(utf-8)
+   3) 载入执行class并输出，contentType

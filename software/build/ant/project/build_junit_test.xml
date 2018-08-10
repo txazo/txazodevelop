@@ -1,0 +1,45 @@
+<project name="test" basedir="." default="test">
+
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="src.test" location="src-test" />
+
+	<property name="jdom.home" location="c:\lib\jdom-b9" />
+	<property name="junit.home" location="c:\lib\junit4.1" />
+
+	<path id="classpath">
+		<fileset dir="${jdom.home}" includes="lib/*.jar" />
+		<fileset dir="${jdom.home}" includes="build/*.jar" />
+		<fileset dir="${junit.home}" includes="junit-4.1.jar" />
+	</path>
+
+	<path id="classpath.test">
+		<path refid="classpath" />
+		<pathelement location="${build}" />
+	</path>
+
+	<target name="clean">
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac destdir="${build}">
+			<src path="${src}" />
+			<src path="${src.test}" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit printsummary="yes" fork="no" haltonfailure="yes">
+			<classpath refid="classpath.test" />
+			<formatter type="xml" />
+			<test name="com.informit.unittest.metric.MetricTestSuite" />
+		</junit>
+	</target>
+
+</project>

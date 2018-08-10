@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${email.host}" />
+		<property name="username" value="${email.username}" />
+		<property name="password" value="${email.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${email.smtp.auth}</prop>
+				<prop key="mail.smtp.timeout">${email.smtp.timeout}</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

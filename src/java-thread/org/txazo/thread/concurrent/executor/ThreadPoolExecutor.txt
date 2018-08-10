@@ -1,0 +1,12 @@
+ThreadPoolExecutor
+
+1. ThreadPoolExecutor
+   ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit,
+                      BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RejectedExecutionHandler handler)
+   corePoolSize: 
+   maximumPoolSize: 
+   keepAliveTime: 
+   unit: 
+   workQueue: 线程池的等待队列
+   threadFactory: 线程工厂对象
+   handler: 线程池的拒绝策略

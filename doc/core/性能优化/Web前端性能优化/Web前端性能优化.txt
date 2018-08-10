@@ -1,0 +1,15 @@
+Web前端性能优化
+
+1. 减少HTTP请求
+   1) 合并CSS、JavaScript、Image、Ajax
+   2) Sea JS异步加载
+2. 使用浏览器缓存
+   1) 缓存CSS、JavaScript、Image、HTML
+   2) Expires、Cache-Control，控制缓存时间
+   3) Last-Modified、ETag，控制缓存失效
+   4) 可使用版本号，http://images.txazo.com/images/login.js?v=20140308
+3. 启用压缩
+   1) 对CSS、JavaScript、HTML启用压缩
+4. CSS放在页面最上面，JavaScript放在页面最下面
+5. 减少Cookie传输
+   1) 静态资源使用独立域名

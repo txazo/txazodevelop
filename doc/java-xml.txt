@@ -1,0 +1,5 @@
+Java解析XML
+1. DOM，W3C处理XML的标准API，有JDOM和DOM4J，适于小型XML文件解析
+   DOM4J的性能高
+2. SAX，流解析，适于大型XML文件解析
+3. Digester，XML的JavaBean化

@@ -1,0 +1,8 @@
+Tomcat架构
+
+HttpServer
+HttpConnector
+HttpProcessor
+HttpRequest
+HttpResponse
+ServletContainer

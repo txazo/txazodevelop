@@ -1,0 +1,18 @@
+MySQL
+
+1. MySQL优化
+   1) 第三范式设计表
+   2) 水平/垂直分表
+   3) 读写分离
+   4) MySQL配置优化
+   5) 硬件配置
+
+1. 慢速查询日志
+log_slow_queries = /var/log/mysqld-slow.log
+long_query_time = 5
+log_queries_not_using_indexes
+
+2. 数据库连接
+max_connections
+
+3. 查询缓存

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ioc>
+
+	<bean id="beanService" class="org.txazo.spring.ioc.service.impl.BeanServiceImpl" />
+
+	<bean id="iocService" class="org.txazo.spring.ioc.service.impl.IOCServiceImpl">
+		<property name="user" value="txazo" />
+		<property name="beanService" ref="beanService" />
+	</bean>
+
+</ioc>

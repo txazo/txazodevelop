@@ -1,0 +1,17 @@
+Python
+
+1. Windows下Python环境变量配置
+PYTHON_HOME=E:\Python\Python34
+PATH=%PATH%;%PYTHON_HOME%
+
+2. 进入Python
+python
+
+3. Linux下运行Python
+chmod u+x sample.py
+./sample.py
+
+4. Python帮助
+help('print')
+
+5. Python缩进

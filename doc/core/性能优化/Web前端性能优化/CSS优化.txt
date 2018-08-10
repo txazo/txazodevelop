@@ -1,0 +1,26 @@
+CSS优化
+
+1. CSS放在页面头部
+
+2. 根据模块来合并CSS
+
+3. 对CSS启用压缩
+
+4. 使用<link>，尽量避免使用@import
+
+5. 避免使用CSS Expressions
+
+6. 避免使用CSS Filter
+
+7. 使用CSS缩写
+color: #000;
+margin: 2px 5px 5px 12px;
+border: 1px solid #0ff;
+background: #f00 url(../images/logo.png) no-repeat fixed 0 0;
+
+8. 使用CSS Multiple Declarations
+.class1 .class2 .class3 {position: absolute; left: 20px; top: 20px;}
+
+9. 优先使用ID Selectors
+
+10. 避免在ID Selectors和Class Selectors前面加Tag Selectors

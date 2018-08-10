@@ -1,0 +1,28 @@
+队列
+
+1. Queue
+       ConcurrentLinkedQueue
+	   ConcurrentLinkedDeque
+   1) BlockingQueue
+       ArrayBlockingQueue
+	   LinkedBlockingQueue
+   2) Deque
+       LinkedList
+   3) BlockingDueue
+       LinkedBlockingDeque
+
+2. offer
+   poll
+   peek
+
+3. Queue
+   1) offer，进队，队列满时返回false
+      poll，出队，队列为空时返回null
+	  peek，返回队头，队列为空时返回null
+   2) add，进队，队列满时抛出IllegalStateException
+	  remove，出队，队列为空时抛出NoSuchElementException
+	  element，返回队头，，队列为空时抛出NoSuchElementException
+
+4. BlockingQueue
+   1) put，进队，队列满时阻塞
+      take，出队，队列为空时阻塞

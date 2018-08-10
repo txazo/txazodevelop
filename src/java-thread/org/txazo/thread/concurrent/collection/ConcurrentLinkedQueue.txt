@@ -1,0 +1,3 @@
+ConcurrentLinkedQueue
+
+1. 线程安全的队列，适用于高并发，

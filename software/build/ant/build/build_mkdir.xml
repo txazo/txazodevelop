@@ -1,0 +1,10 @@
+<project name="mkdir" basedir="." default="mkdir">
+
+	<target name="mkdir" description="mkdir">
+
+		<!-- 创建目录 -->
+		<mkdir dir="D:/test" />
+
+	</target>
+
+</project>

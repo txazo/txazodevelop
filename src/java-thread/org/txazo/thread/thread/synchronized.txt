@@ -1,0 +1,17 @@
+synchronized
+
+1. 每一个对象有且仅有一个同步锁，同步锁是依赖于对象而存在的
+
+2. 不同线程对同步锁的访问是互斥的
+
+3. synchronized方法: synchronized修饰方法
+   synchronized代码块: synchronized修饰代码块
+
+4. 当一个线程访问某对象的synchronized方法或synchronized代码块时，其它线程对该对象的synchronized方法或synchronized代码块的访问将被阻塞
+   当一个线程访问某对象的synchronized方法或synchronized代码块时，其它线程仍然可以访问该对象的非synchronized方法或synchronized代码块
+
+5. 同步锁类型
+   实例锁: 实例对象的同步锁
+       synchronized void syncMethod()
+   全局锁: 类的同步锁
+       static synchronized void cSyncMethod()

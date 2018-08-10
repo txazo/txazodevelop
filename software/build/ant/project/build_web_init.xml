@@ -1,0 +1,35 @@
+<project name="web" basedir="." default="init">
+
+	<property name="build" value="build" />
+	<property name="build-lib" value="build-lib" />
+	<property name="src" value="src" />
+	<property name="java" value="${src}/java" />
+	<property name="resource" value="${src}/resource" />
+	<property name="test" value="${src}/test" />
+	<property name="web" value="web" />
+	<property name="WEB-INF" value="${web}/WEB-INF" />
+	<property name="classes" value="${WEB-INF}/classes" />
+	<property name="config" value="${WEB-INF}/config" />
+	<property name="jsp" value="${WEB-INF}/jsp" />
+	<property name="lib" value="${WEB-INF}/lib" />
+
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${build-lib}" />
+		<delete dir="${src}" />
+		<delete dir="${web}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build-lib}" />
+		<mkdir dir="${java}" />
+		<mkdir dir="${resource}" />
+		<mkdir dir="${test}" />
+		<mkdir dir="${classes}" />
+		<mkdir dir="${config}" />
+		<mkdir dir="${jsp}" />
+		<mkdir dir="${lib}" />
+	</target>
+
+</project>

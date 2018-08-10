@@ -1,0 +1,40 @@
+Memcached
+
+1. 高性能的分布式内存对象缓存服务器
+   1) 基于C/S架构，协议简单
+   2) 基于libevent的事件处理
+   3) 内置内存存储方式
+   4) 基于客户端的Memcached互不通信的分布式
+
+2. Memcached数据存储方式
+   Slab Allocation: 将分配的内存分割成各种尺寸的块，并把尺寸相同的块分成组Slab
+
+3. Memcached数据过期处理
+   Lazy Expiration: 在get时检查记录是否过期
+   LRU: 删除最近最少使用记录的机制
+
+4. Memcached连接
+   telnet 112.124.6.220 9998
+
+5. Memcached
+   ./Memcached -vv
+
+6. Memcached命令
+   1) stats [items | slabs | sizes | settings | reset]
+	  stats cachedump <slab_id> <limit_num>
+	  stats detail [on | off | dump]
+   2) flush_all
+   3) set | add | replace | append | prepend <key> <flags> <expires> <bytes>
+      <value>
+   4) cas <key> <flags> <expires> <bytes> <cas>
+      <value>
+   5) get <key>
+   6) gets <key>
+   7) delete <key>
+   8) incr | decr <key> <value>
+   9) quit
+
+7. Memcached的Java实现
+   1) 
+   2) 
+   3) 

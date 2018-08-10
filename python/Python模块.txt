@@ -1,0 +1,41 @@
+Python模块
+
+1. 模块定义
+1) 一个包含定义的函数和变量的文件
+2) 模块的文件名必须以.py为扩展名
+
+2. 模块使用
+import sys
+for i in sys.argv:
+	print(i)
+print('The Python Path is', sys.path)
+
+3. 字节编码的.pyc文件
+
+4. from import语句，尽量避免使用
+from sys import argv
+for i in argv:
+	print(i)
+
+from sys import *
+for i in argv:
+	print(i)
+
+5. 模块的__name__
+if __name__ == '__main__':
+	print('This module is being run by itself')
+else:
+	print('This module is being imported from another module')
+	
+6. 自定义模块
+# txazo.py
+def hello():
+	print('')
+
+import txazo
+txazo.hello()
+
+7. dir()函数，列出模块定义的标识符，包括函数、类和变量
+import sys
+dir(sys)
+dir()

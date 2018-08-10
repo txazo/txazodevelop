@@ -1,0 +1,15 @@
+Enumeration
+
+1. JDK1.0提供的接口
+   hasMoreElements()
+   nextElement()
+
+2. 不支持fail-fast机制，不可删除数据
+
+3. Enumeration遍历
+   Vector.elements()
+   Hashtable.keys()
+   Hashtable.elements()
+
+4. 实现类
+   StringTokenizer

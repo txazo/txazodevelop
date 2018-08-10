@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ioc>
+
+	<bean id="beanService" class="org.txazo.spring.ioc.service.impl.BeanServiceImpl" />
+
+	<aop:config>
+		<aop:aspect id="TestAspect" ref="aspectBean">
+			<aop:pointcut id="businessService" expression="execution(* com.spring.service.*.*(..))" />
+			<aop:before pointcut-ref="businessService" method="doBefore" />
+			<aop:after pointcut-ref="businessService" method="doAfter" />
+			<aop:around pointcut-ref="businessService" method="doAround" />
+			<aop:after-throwing pointcut-ref="businessService" method="doThrowing" throwing="ex" />
+		</aop:aspect>
+	</aop:config>
+
+</ioc>

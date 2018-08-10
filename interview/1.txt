@@ -1,0 +1,30 @@
+1. final finally finalize
+
+2. 匿名内部类
+
+3. & &&
+
+4. Map
+
+5. Collection Collections
+
+6. GC
+
+7. Short s = 1; s = s + 1;
+   Short s = 1; s += 1;
+
+8. sleep() wait()
+
+Overload Override
+
+Throwable Error Exception
+
+单例
+
+ArrayList Vector
+
+JSP动态include和静态include
+
+forward() redirect()
+
+数据库事务 Spring事务

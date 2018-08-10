@@ -1,0 +1,11 @@
+# .gitignore
+
+# java
+*.class
+classes/
+*.jar
+*.war
+*.ear
+
+# svn
+.svn/

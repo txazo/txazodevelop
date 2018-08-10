@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
+
+	<bean id="txazoDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://${jdbc.txazo.database}?useUnicode=true&amp;characterEncoding=UTF-8" p:user="${jdbc.txazo.user}" p:password="${jdbc.txazo.password}"
+		p:maxPoolSize="40" p:minPoolSize="5" p:initialPoolSize="5" p:maxIdleTime="20" />
+
+	<bean id="txazoJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="txazoDataSource" />
+
+	<bean id="txazoNamedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="txazoJdbcTemplate" />
+	</bean>
+
+	<bean id="readDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://${jdbc.read.database}?useUnicode=true&amp;characterEncoding=UTF-8" p:user="${jdbc.read.user}" p:password="${jdbc.read.password}"
+		p:maxPoolSize="40" p:minPoolSize="5" p:initialPoolSize="5" p:maxIdleTime="20" />
+
+	<bean id="readJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="readDataSource" />
+
+	<bean id="readNamedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="readJdbcTemplate" />
+	</bean>
+
+	<bean id="writeDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://${jdbc.write.database}?useUnicode=true&amp;characterEncoding=UTF-8" p:user="${jdbc.write.user}" p:password="${jdbc.write.password}"
+		p:maxPoolSize="40" p:minPoolSize="5" p:initialPoolSize="5" p:maxIdleTime="20" />
+
+	<bean id="writeJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="writeDataSource" />
+
+	<bean id="writeNamedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="writeJdbcTemplate" />
+	</bean>
+
+	<bean id="jmsDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://${jdbc.jms.database}?useUnicode=true&amp;characterEncoding=UTF-8" p:user="${jdbc.jms.user}" p:password="${jdbc.jms.password}"
+		p:maxPoolSize="40" p:minPoolSize="5" p:initialPoolSize="5" p:maxIdleTime="20" />
+
+	<bean id="jmsJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="jmsDataSource" />
+
+	<bean id="jmsNamedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="jmsJdbcTemplate" />
+	</bean>
+
+	<bean id="testDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://${jdbc.test.database}?useUnicode=true&amp;characterEncoding=UTF-8" p:user="${jdbc.test.user}" p:password="${jdbc.test.password}"
+		p:maxPoolSize="40" p:minPoolSize="5" p:initialPoolSize="5" p:maxIdleTime="20" />
+
+	<bean id="testJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="testDataSource" />
+
+	<bean id="testNamedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="testJdbcTemplate" />
+	</bean>
+
+</beans>

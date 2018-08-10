@@ -1,0 +1,9 @@
+Thread
+
+1. 接口
+   run(): 普通的成员方法，run()可被重复调用
+   start(): 启动一个新线程，并执行run()方法，start()不能被重复调用
+
+2. 获取当前线程
+   Thread.currentThread()
+   Thread.currentThread().getName()

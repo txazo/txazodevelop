@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.2//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Product" type="org.txazo.framework.mybatis.bean.Product" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="org/txazo/framework/mybatis/dao/ProductMapper.xml" />
+	</mappers>
+</configuration>

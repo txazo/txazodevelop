@@ -1,0 +1,59 @@
+Master-Slave
+
+1. 编辑Master配置文件/etc/my.cnf
+[mysqld]
+log-bin=mysql-bin
+binlog_format=mixed
+server-id=1
+binlog-do-db=ms
+binlog-ignore-db=mysql
+binlog-ignore-db=test
+
+2. Master授权主从帐号
+GRANT REPLICATION SLAVE ON *.* TO 'txazo'@'120.24.102.136' IDENTIFIED BY 'txazo'
+
+3. 重启Master
+service mysqld restartcreate tab
+
+4. Master备份(Master已存在数据)
+1) Master设为只读状态
+   flush tables with read lock
+2) 记录Master状态
+   show master status
+		File				Position
+		mysql-bin.000005	106
+3) 备份数据库
+   a) 导出到SQL文件
+      mysqldump -utxazo -ptxazo ms > ms.sql
+   b) 复制数据库文件
+4) 解除Master只读状态
+   unlock tables
+
+5. 编辑Slave配置文件/etc/my.cnf
+[mysqld]
+log-bin=mysql-bin
+binlog_format=mixed
+server-id=2
+replicate-do-db=ms
+replicate-ignore-db=mysql
+replicate-ignore-db=test
+
+6. 备份的数据库恢复到Slave
+   a) 执行导出的SQL文件
+      mysql -utxazo -ptxazo ms < db.sql
+   b) 复制数据库文件
+
+7. 重启Slave
+service mysqld restart
+
+8. 配置Master-Slave
+stop slave
+change master to master_host='112.124.6.220', master_user='txazo', master_password='txazo', master_log_file='mysql-bin.000005', master_log_pos=106
+
+9. 启动Slave连接
+start slave
+
+10. 查看Slave状态
+show slave status
+	Slave_IO_Running: Yes
+	Slave_SQL_Running: Yes

@@ -1,0 +1,25 @@
+LinkedBlockingDeque
+
+1. LinkedBlockingDeque
+   1) 线程安全
+   2) 双向链表
+   3) 双向并发阻塞队列，支持FIFO和FILO
+   4) 
+
+2. BlockingDeque接口
+   addFirst  offerFirst putFirst
+   addLast   offerLast  putLast (add offer put)
+   takeFirst pollFirst  removeFirst (take poll remove)
+   takeLast  pollLast   removeLast
+   getFirst  peekFirst
+   getLast   peekLast (peek element)
+   注: 上述操作，在操作前，会获取互斥锁，操作完毕，释放互斥锁
+
+2. 源码
+transient Node<E> first;  // 双向队列的头部
+transient Node<E> last;  // 双向队列的尾部
+private transient int count;  // 双向队列的节点数
+private final int capacity;  // 双向队列的最大容量，默认为Integer.MAX_VALUE
+final ReentrantLock lock = new ReentrantLock();  // 互斥锁
+private final Condition notEmpty = lock.newCondition();
+private final Condition notFull = lock.newCondition();

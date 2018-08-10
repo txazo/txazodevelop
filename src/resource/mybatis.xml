@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="driver" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://112.124.6.220:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="txazo" />
+		<property name="password" value="txazo" />
+	</properties>
+
+	<typeAliases>
+		<typeAlias alias="Product" type="org.txazo.framework.mybatis.bean.Product" />
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="org/txazo/framework/mybatis/dao/ProductMapper.xml" />
+	</mappers>
+</configuration>

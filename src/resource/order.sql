@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS Product (
+	id int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+	name varchar(30) NOT NULL COMMENT 'name',
+	createTime datetime NOT NULL COMMENT 'createTime',
+	PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Product';

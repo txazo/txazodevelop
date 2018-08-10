@@ -1,0 +1,20 @@
+src/java					Java
+src/java-framework			Java开源框架
+src/java-pattern			Java设计模式
+src/java-resource			Resource
+src/linux					Linux
+src/mysql					MySQL
+src/python					Python
+src/server					Server
+src/spring					Spring
+src/spring-resource			Resource
+src/web-architecture		Web架构
+
+src/java
+org.txazo.java.common					公共
+org.txazo.java.concurrency				并发
+org.txazo.java.concurrency.future		Future模式
+org.txazo.java.io						I/O
+org.txazo.java.reflect					反射
+org.txazo.java.socket					网络编程
+org.txazo.java.thread					多线程

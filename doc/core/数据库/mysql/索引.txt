@@ -1,0 +1,27 @@
+索引：提高查询效率
+
+避免全表扫描
+
+索引类型：
+    primary key
+	unique
+
+
+create table test(
+    id int(11) not null auto_increment,
+	t1 int(11) not null,
+	t2 int(11) not null,
+	t3 int(11) not null,
+	primary key (id)
+);
+
+ALTER TABLE test ADD INDEX (name)
+ALTER TABLE test ADD UNIQUE (name)
+ALTER TABLE test ADD PRIMARY KEY (name)
+
+ALTER TABLE test DROP INDEX name
+ALTER TABLE test DROP UNIQUE name
+ALTER TABLE test DROP PRIMARY name
+
+show index from test;
+show keys from test;

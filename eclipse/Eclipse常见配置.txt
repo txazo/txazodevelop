@@ -1,0 +1,30 @@
+1. Preferences - General - Appearance
+   Theme: 选择Eclipse主题
+   
+2. Preferences - General - Editors - File Associations
+   更改文件的默认打开方式
+   
+3. Preferences - General - Editors - Text Editors - Spelling
+   关闭Eclipse的拼写检查
+   
+4. Preferences - General - Startup and Shutdown
+   关闭启动项
+   
+5. Preferences - General - Workspace
+   默认工程配置
+   Text file encoding: 更改项目默认编码
+   
+6. Preferences - Java - Build Path - User Libraries
+   自定义Library
+   
+7. Preferences - Java - Code Style - Formatter
+   自定义Java格式化模板
+   
+8. Preferences - Java - Compiler
+   设置编译级别
+   
+9. Preferences - Java - Editor - Syntax Coloring
+   配置Java代码颜色
+   
+10. Preferences - Java - Installed JREs
+   配置JRE

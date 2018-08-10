@@ -1,0 +1,123 @@
+Java Plan
+
+1. Java
+   1) IO/NIO
+   2) 集合
+   3) 多线程/并发
+   4) 网络编程
+   5) Java高级特性: 反射 动态代理 泛型 Future
+
+2. RPC
+   1) Hessian
+   2) Thrift
+   3) Protocol Buffer
+
+3. 缓存
+   1) EHCache
+   2) Memcached
+   3) Redis
+   4) Expand: Cookie Session HashMap
+
+4. 消息
+   1) JMS
+   2) ActiveMQ
+
+5. 数据库
+   1) MySQL
+   2) Mongodb
+   3) HBase
+
+6. Linux
+   1) Shell
+
+7. 设计模式(23种)
+
+8. JVM
+   1) 堆 栈 方法区
+   2) 类加载
+
+9. J2EE规范
+   1) Java Mail
+
+10. 版本控制工具
+    1) SVN
+	2) Git
+
+11. 开源框架
+    1) Spring
+	   Spring MVC, 视图解析
+	2) Struts2
+	3) MyBatis
+	4) Apache Commons
+	5) Netty
+
+12. 单元测试框架
+    1) JUnit
+
+13. 构建工具
+    1) Ant 
+	2) Maven
+
+14. 服务器
+    1) Nginx 
+	2) Tomcat 
+	3) Resin
+	4) Jetty
+	5) Apache
+	6) LVS
+
+15. 脚本
+    1) Shell
+	2) Python
+
+16. 代码调试
+    1) Debug
+
+17. 架构
+    1) MVC
+	2) RESTful
+	3) SOA
+
+18. 性能优化
+    1) JVM优化
+	2) 服务器优化
+	3) 数据库优化
+
+19. 搜索
+    1) Lucene
+	2) Solr
+
+20. 网络协议
+    1) HTTP
+	2) TCP/IP
+
+21. 源码
+    1) Spring
+
+22. 开发工具
+    1) Eclipse
+
+23. 负载均衡
+    1) DNS
+	2) Nginx
+	3) MySQL
+
+24. 分布式存储
+
+25. 站内信: 收件箱、发件箱、收藏箱、垃圾箱，点到点、点到面
+
+26. 模板: Velocity FreeMarker
+
+27. 异步框架
+
+28. 集群与负载均衡
+
+29. 连接池
+   1) 数据库连接池
+   2) 线程池
+   3) 对象池
+
+30. 大数据
+   1) Hadoop
+
+31. 应用整体架构 部署

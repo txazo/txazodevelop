@@ -1,0 +1,9 @@
+站内信设计：
+
+1. 功能：收件箱 发件箱 收藏箱 垃圾箱
+2. 表结构：
+   站内信记录表MailHistory(十分表 双向表)
+   站内信内容表MailContent(十分表)
+3. 建表脚本：
+   mail.MailHistory.sh
+   mail.MailContent.sh

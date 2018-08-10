@@ -1,0 +1,30 @@
+<project name="delete" basedir="." default="delete">
+
+	<property name="ant.test" value="D:/test" />
+
+	<target name="delete" description="delete">
+
+		<!-- 删除文件 -->
+		<delete file="${ant.test}/delete.txt" />
+
+		<!-- 删除目录 -->
+		<delete dir="${ant.test}/delete" />
+
+		<!-- 删除目录 -->
+		<delete includeEmptyDirs="true">
+			<fileset dir="${ant.test}/delete" />
+		</delete>
+
+		<!-- 删除目录下所有文件 -->
+		<delete includeemptydirs="true">
+			<fileset dir="${ant.test}/delete" includes="**/*" />
+		</delete>
+
+		<!-- 删除目录下所有java文件 -->
+		<delete>
+			<fileset dir="${ant.test}/src" includes="**/*.java" />
+		</delete>
+
+	</target>
+
+</project>

@@ -1,0 +1,10 @@
+JavaScript框架
+
+1. jQuery
+
+2. SeaJS
+1) SeaJS是一个遵循CommonJS规范的JavaScript模块加载框架，可以实现JavaScript的模块化开发及加载机制
+2） SeaJS可以与jQuery完美集成
+
+3. LabJS
+1) 异步并行加载

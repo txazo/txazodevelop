@@ -1,0 +1,67 @@
+List
+特点：有序可重复
+
+1. List
+1) ArrayList
+2) LinkedList
+3) Stack
+4) Vector
+5) CopyOnWriteArrayList
+6) Collections.synchronizedList(List list)
+
+3. List排序
+Collections.sort(List list)
+Collections.sort(List list, Comparator c)
+Collections.shuffle(List list)
+
+6. ArrayList
+9) 遍历: get(i)比Iterator快
+
+7. LinkedList
+1) 线程不安全
+2) 内部实现: 双向链表(size, first, last)
+add(E element) - O(1)
+add(int index, E element) - O(n)
+get(int index) - O(n)
+remove(int index) - O(n)
+remove(Object o) - O(n)
+contains(Object o) - O(n)，循环遍历查找
+toArray() - O(n)
+toArray(T[] a) - O(n)
+3) 遍历: Iterator比get(i)快
+   顺序访问效率高，随机访问效率低
+
+8. ArrayList和LinkedList比较
+1) 遍历用ArrayList
+2) 频繁增删改用LinkedList
+
+8. Stack
+1) 堆栈，继承自Vector
+2) 先进后出
+2) 进栈: push(E item) - O(1)
+   出栈: pop()
+   栈顶: peek()
+   查找: search(Object o) - O(n)
+
+9. Vector
+1) 线程安全
+2) 同ArrayList，使用synchronized同步方法
+
+6. CopyOnWriteArrayList
+1) 线程安全
+2) Copy-On-Write，读写分离
+3) 读()不加锁，性能高
+4) 写(add, remove, set)加锁，性能差
+   Arrays.copyOf复制原数组，在新的数组上写，写完后将引用指向新的数组
+5) 适于读操作多、写操作少的多线程环境，比如缓存
+
+2. Collections.synchronizedList(List list)
+1) 线程安全
+2) 使用synchronized同步代码块
+List<String> list = Collections.synchronizedList(new ArrayList<String>());
+synchronized (list) {
+	Iterator<String> i = list.iterator();
+	while (i.hasNext()) {
+		i.next();
+	}
+}

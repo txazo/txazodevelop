@@ -1,0 +1,11 @@
+网络爬虫
+
+1. 网络爬虫模块
+Fetcher: 用于根据url下载对应的网页
+DNS Resolver: DNS的解析
+Content Seen: 网页内容的去重
+Extractor: 提取网页中的url或者其它的一些内容
+URL Filter: 过滤掉不需要下载的url
+URL Seen: url的去重
+URL Set: 存储所有的url
+URL Frontier: 调度器，决定接下来哪些下载哪些url对应的网页

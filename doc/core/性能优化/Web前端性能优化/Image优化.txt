@@ -1,0 +1,44 @@
+Images优化
+
+1. Image Maps
+   优点：减少HTTP请求
+<img usemap="#back" src="./images/map.jpg" />
+<map name="back">
+    <area shape="rect" coords="0,0,49,50" href="javascript:alert(1);" title="1">
+    <area shape="rect" coords="50,0,99,50" href="javascript:alert(2);" title="2">
+    <area shape="rect" coords="100,0,149,50" href="javascript:alert(3);" title="3">
+</map>
+
+2. CSS Sprites
+   优点：减少HTTP请求
+#nav span {
+    float: left;
+    width: 60px;
+    height: 60px;
+    display: inline;
+    background-image: url("../image/sprites.jpg");
+}
+
+.a1 {
+    background-position: 0 0;
+}
+
+.a2 {
+    background-position: -60px 0;
+}
+
+<div id="nav">
+    <a href="javascript:alert(1);" title="1">
+        <span class="a1"></span>
+    </a>
+    <a href="javascript:alert(2);" title="2">
+        <span class="a2"></span>
+    </a>
+</div>
+
+3. Data URI
+   优点：减少HTTP请求
+   缺点：不支持缓存，内联到CSS和JavaScript中可缓存
+.gift {
+    background-image: url("data:image/jpeg;base64,R0lGODlhHwAfAPcAA...");
+}

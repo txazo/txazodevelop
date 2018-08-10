@@ -1,0 +1,7 @@
+Hashtable
+
+1. 线程安全，方法同步，继承自Dictionary
+2. key和value都不可为null
+3. 实现: 数组 + 链表，数组大小默认为11，增长方式为old * 2 + 1
+   原理: 拉链法
+4. 遍历: Enumeration

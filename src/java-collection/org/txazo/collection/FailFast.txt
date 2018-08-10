@@ -1,0 +1,17 @@
+fail-fast机制
+
+1. fail-fast机制是Collection/Map的一种错误检测机制
+
+2. fail-fast机制产生的条件
+   对Collection/Map进行Iterator迭代时，若Collection/Map的内容被修改，会抛出ConcurrentModificationException
+
+3. fail-fast机制的原理
+1) 源码中通过modCount实现，modCount就是修改次数，对Collection/Map的内容进行修改都会使modCount加1
+2) 在Iterator初始化的时候，会将modCount赋值给expectedModCount
+3) 在Iterator迭代过程中，调用next()和remove()都会先判断modCount和expectedModCount是否相等，不相等就说明Collection/Map的内容已被修改，抛出ConcurrentModificationException
+4) 在Iterator迭代过程中，可调用Iterator.remove()删除当前迭代的对象，删除之后会将modCount重新赋值给expectedModCount，保证modCount和expectedModCount相等
+   
+4. fail-fast的解决办法
+1) 使用java.util.concurrent包下的类代替java.util包下的类
+ArrayList			CopyOnWriteArrayList
+HashMap				ConcurrentHashMap

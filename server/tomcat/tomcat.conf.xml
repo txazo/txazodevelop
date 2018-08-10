@@ -1,0 +1,5 @@
+http://127.0.0.1:8080
+<Context path="" docBase="/www/txazo" debug="0" reloadable="true" />
+
+http://127.0.0.1:8080/txazo
+<Context path="/txazo" docBase="/www/txazo" debug="0" reloadable="true" />

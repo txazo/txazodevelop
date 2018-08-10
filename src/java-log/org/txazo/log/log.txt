@@ -1,0 +1,32 @@
+Java日志架构
+
+1. 日志实现
+	1) java.util.logging
+	2) Log4j
+	3) Logback
+
+2. 日志门面:
+	1) Commons Logging
+	2) Slf4j
+
+3. Commons Logging日志门面
+1) Commons Logging + java.util.logging
+2) Commons Logging + Log4j
+
+4. Slf4j日志门面
+slf4j-api.jar - 	Logback
+slf4j-api.jar - 	slf4j-log4j.jar - 	Log4j
+slf4j-api.jar - 	slf4j-jdk.jar	-	java.util.logging
+
+java.util.logging	-	jul-to-slf4j.jar		-	slf4j-api.jar - 	Logback
+Commons Logging		-	jcl-over-slf4j.jar		-	slf4j-api.jar - 	Logback
+Log4j				-	log4j-over-slf4j.jar	-	slf4j-api.jar - 	Logback
+
+java.util.logging	-	jul-to-slf4j.jar		-	slf4j-api.jar - 	slf4j-log4j.jar - 	Log4j
+Commons Logging		-	jcl-over-slf4j.jar		-	slf4j-api.jar - 	slf4j-log4j.jar - 	Log4j
+
+Commons Logging		-	jcl-over-slf4j.jar		-	slf4j-api.jar - 	slf4j-jdk.jar	-	java.util.logging
+Log4j				-	log4j-over-slf4j.jar	-	slf4j-api.jar - 	slf4j-jdk.jar	-	java.util.logging
+
+5. 高并发日志系统
+   写日志 - 缓存队列 - 文件

@@ -1,0 +1,4 @@
+浏览器缓存
+
+1. ETag
+1) 创建Filter，对HTTP响应计算MD5哈希值，做为ETag
